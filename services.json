@@ -1,0 +1,9 @@
+{
+    "list" : [
+        {
+            "name" : "Google",
+            "description" : "Google website",
+            "url" : "https://www.google.com"
+        }
+    ]
+}
