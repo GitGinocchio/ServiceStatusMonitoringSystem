@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # Permette l'avvio manuale del workflow
 
 jobs:
-  setup-environment:
+  get-services-status:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Main Branch
@@ -35,21 +35,13 @@ jobs:
           pwd
           ls -R
 
-  get-services-status:
-    runs-on: ubuntu-latest
-    needs: [setup-environment]
-    steps:
       - name: Get Services Status
         id: "get-services-status"
         shell: bash
         run: |
           UPDATE=$(python scripts/actions/get-services-status.py) || exit 1
           echo "markdown=$(echo $UPDATE)" >> $GITHUB_OUTPUT
-    
-  commit-changes:
-    runs-on: ubuntu-latest
-    needs: [setup-environment, get-services-status]
-    steps:
+
       - name: Commit Changes
         shell: bash
         run: |
