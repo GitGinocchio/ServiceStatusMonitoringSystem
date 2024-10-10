@@ -2,11 +2,11 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from requests import Response
 from os import path
+from os import makedirs
 import requests
 import json
 
-def extendavg(avg : float, n : int, element : float):
-    return (avg * n + element) / (n + 1)
+def extendavg(avg : float, n : int, element : float): return (avg * n + element) / (n + 1)
 
 session = requests.Session()
 
@@ -97,7 +97,7 @@ class Status:
         self.overall['avg-downtime-percentage'] = avg_downtime_percentage
 
     def load(self):
-        if not path.exists(service_path:=f'./data/services/{self.name.lower()}.json'): return
+        if not path.exists(service_path:=f'./data/services/{self.name.lower()}/{self.name.lower()}.json'): return
         with open(service_path,'r') as f: content : dict = json.load(f)
 
         self.metrics = content.get('metrics',self.metrics)
@@ -110,7 +110,8 @@ class Status:
     def add_report(self): pass
 
     def save(self):
-        with open(f'./data/services/{self.name.lower()}.json','w') as f: 
+        makedirs(f'./data/services/{self.name.lower()}/graphs',exist_ok=True)
+        with open(f'./data/services/{self.name.lower()}/{self.name.lower()}.json','w') as f: 
             json.dump({
                 'name' : self.name,
                 'description' : self.description,
