@@ -2,13 +2,13 @@
 	"name": "Google",
 	"description": "Google website",
 	"url": "https://www.google.com",
-	"timestamp": "2024-10-19T09:14:08.762019+00:00",
+	"timestamp": "2024-10-19T09:26:50.185229+00:00",
 	"status": "OK",
 	"code": 200,
-	"latency": 0.125837,
+	"latency": 0.078005,
 	"overall": {
-		"avg-latency": 0.07865672161741837,
-		"avg-uptime": 413331.99847257126,
+		"avg-latency": 0.07865621522921525,
+		"avg-uptime": 413661.0026291108,
 		"avg-uptime-percentage": 100.0,
 		"avg-downtime": 0.0,
 		"avg-downtime-percentage": 0.0
@@ -21875,6 +21875,23 @@
 			"code": 200,
 			"status": "OK",
 			"timestamp": "2024-10-19T09:14:08.762019+00:00"
+		},
+		{
+			"uptime-percentage": 100.0,
+			"downtime-percentage": 0.0,
+			"uptime": 836760.3479389988,
+			"downtime": 0.0,
+			"latency": 0.078005,
+			"overall": {
+				"avg-latency": 0.07865621522921525,
+				"avg-uptime": 413661.0026291108,
+				"avg-downtime": 0.0,
+				"avg-uptime-percentage": 100.0,
+				"avg-downtime-percentage": 0.0
+			},
+			"code": 200,
+			"status": "OK",
+			"timestamp": "2024-10-19T09:26:50.185229+00:00"
 		}
 	],
 	"reports": [],
