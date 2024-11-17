@@ -125,12 +125,3 @@ class Status:
                 'reports' : self.reports,
                 'notes' : self.notes,
             },f, indent='\t')
-
-with open('./data/services.json','r') as f:
-    services : list = json.load(f)['list']
-
-for service in services:
-    status = Status(service['name'],service['url'],service['description'])
-    status.load()
-    status.update()
-    status.save()

@@ -1,0 +1,114 @@
+html, body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--body-background-color);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header-background-color);
+    padding: 10px 20px; 
+}
+
+h1, h3 {
+    color: white;
+}
+
+a {
+    color: var(--a-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article {
+    display: flex;
+    border-radius: 10px;
+    padding-left: 2rem;
+    height: auto;
+    border-left: 5px solid #4CAF50;
+    background-color: var(--article-background-color);
+    justify-content: space-between; 
+    margin-bottom: 30px;
+    transition: transform 0.3s, background-color 0.3s; 
+}
+
+article:hover {
+    transform: translateY(-5px); 
+    background-color: var(--hover-background-color, rgba(255, 255, 255, 0.1));
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    font-size: 20px;
+    transition: color 0.3s; /* Aggiunta transizione per il colore */
+}
+
+.links a:hover {
+    color: #FFD700; /* Cambia colore al passaggio del mouse */
+}
+
+.container {
+    max-width: 850px;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between; /* Allineamento migliorato */
+    width: 100%; /* Assicura che utilizzi tutto lo spazio disponibile */
+    align-items: center;
+}
+
+.main-container{
+    max-width: 850px;
+    margin: 70px auto; 
+    border-color: var(--main-container-border-color);
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+
+.status-online {
+    border-left-color: var(--status-online-border-left-color); 
+}
+
+.status-offline {
+    border-left-color: var(--status-offline-border-left-color); 
+}
+
+.title-content {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.status-info {
+    margin-top: 0;
+}
+
+.img {
+    height: 2rem;
+}
+
+.mini-graph {
+    background-color: var(--mini-graph-background-color);
+    height: 150px; 
+    border: none;
+}
+
+.status-info p {
+    color: var(--p-color);
+    font-size: 18px;
+    margin: 3px 0; 
+}
