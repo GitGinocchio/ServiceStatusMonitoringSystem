@@ -26,15 +26,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+
+      - name: Checkout Main Branch
         uses: actions/checkout@v4
+        with:
+          ref: main
+    
+      - name: Checkout Data Branch
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: ./public/data
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./public
           destination: ./_site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

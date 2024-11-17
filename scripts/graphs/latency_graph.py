@@ -8,7 +8,8 @@ import json
 
 import mpld3
 
-plt.style.use('seaborn-v0_8-darkgrid') #'seaborn-v0_8-deep' 'seaborn-v0_8-pastel' 'seaborn-v0_8-darkgrid' 'Solarize_Light2' 'seaborn-v0_8-white' 'ggplot'
+#plt.style.use('seaborn-v0_8-darkgrid') #'seaborn-v0_8-deep' 'seaborn-v0_8-pastel' 'seaborn-v0_8-darkgrid' 'Solarize_Light2' 'seaborn-v0_8-white' 'ggplot'
+plt.rcParams['legend.fontsize'] = 17
 
 from utils import generate_spline_curve
 
@@ -21,8 +22,8 @@ metrics = data['metrics']
 overall = [metric['overall'] for metric in metrics]
 
 # Crea un DataFrame dalle metriche
-metrics_df = pd.DataFrame(metrics[-100::])
-overall_df = pd.DataFrame(overall[-100::])
+metrics_df = pd.DataFrame(metrics[-50::])
+overall_df = pd.DataFrame(overall[-50::])
 
 # Convertilo in formato datetime
 metrics_df['timestamp'] = pd.to_datetime(metrics_df['timestamp'],dayfirst=True,format='ISO8601', utc=True)
@@ -35,12 +36,12 @@ metrics_df['timestamp'] = pd.to_datetime(metrics_df['timestamp'],dayfirst=True,f
 #x_plot_datetime = [datetime.fromtimestamp(x,timezone.utc) for x in x_latency]
 
 #plt.plot(x_plot_datetime, y_latency, label='Latency',color='tab:purple', linewidth=2)
-plt.plot(metrics_df['timestamp'], metrics_df['latency'], label='Latency',color='tab:purple', linewidth=5)
-plt.plot(metrics_df['timestamp'], metrics_df['latency'], 'o', label='Latency',color='purple', markersize=0.2)
+plt.plot(metrics_df['timestamp'], metrics_df['latency'], label='Latency',color='tab:purple', linewidth=2)
+plt.plot(metrics_df['timestamp'], metrics_df['latency'], 'o', label='Latency',color='purple', markersize=3)
 
 #plt.plot(x_plot_datetime, y_avg_latency, label='Average Latency',color='tab:blue', linewidth=2)
-plt.plot(metrics_df['timestamp'], overall_df['avg-latency'], label='Average Latency',color='tab:blue', linewidth=5)
-plt.plot(metrics_df['timestamp'],overall_df['avg-latency'], 'o', label='Average Latency',color='blue', markersize=0.2)
+plt.plot(metrics_df['timestamp'], overall_df['avg-latency'], label='Average Latency',color='tab:blue', linewidth=2)
+plt.plot(metrics_df['timestamp'], overall_df['avg-latency'], 'o', label='Average Latency',color='blue', markersize=3)
 
 
 
@@ -57,8 +58,9 @@ plt.plot(metrics_df['timestamp'],overall_df['avg-latency'], 'o', label='Average 
 #plt.gca().xaxis.set_tick_params(which='major', size=12)
 #plt.gca().xaxis.set_tick_params(which='minor', size=2)
 
-plt.title("Latency",loc='left', fontsize=15, fontweight="bold",color='white')
+#plt.title("Latency",loc='left', fontsize=20, fontweight="bold",color='black')
 legend = plt.legend(loc='best')
+plt.axis("off")
 
 # Impostare lo sfondo della legenda
 frame = legend.get_frame()
@@ -66,13 +68,13 @@ frame.set_facecolor((0.15, 0.15, 0.15, 1.00)) # Sfondo grigio
 
 for text in legend.texts: text.set_color('white')  # Colore del testo: bianco
 
-#plt.savefig("latency.png",transparent=True, dpi=1000)
-#plt.show()
+plt.savefig("latency.png",transparent=True, dpi=1000,bbox_inches='tight', pad_inches=0)
+plt.show()
 
-figure = plt.gcf()
+#figure = plt.gcf()
 #mpld3.show(figure)
 
 # Salva come file HTML interattivo con mpld3
-html_str = mpld3.fig_to_html(figure)
-with open("latency.html", "w") as f:
-    f.write(html_str)
+#html_str = mpld3.fig_to_html(figure)
+#with open("latency.html", "w") as f:
+    #f.write(html_str)
