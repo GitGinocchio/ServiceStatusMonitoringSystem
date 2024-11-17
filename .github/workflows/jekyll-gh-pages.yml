@@ -30,7 +30,7 @@ jobs:
       - name: Checkout Website Branch
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: website
           path: ./public
     
       - name: Checkout Data Branch
