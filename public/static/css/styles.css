@@ -1,114 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alfa+Slab+One&family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Alfa+Slab+One&family=Archivo+Black&family=Tilt+Warp&display=swap');
+
 html, body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-background-color); /* Colore di sfondo del design */
+    color: #000;
+  }
+  
+header {
+    display: flex;
+    justify-content: space-between; /* Allineamento orizzontale dei contenuti */
+    align-items: center; /* Allineamento verticale dei contenuti */
+    padding: 10px 400px; /* Spaziatura interna della header */
+    background-color: var(--header-background-color); /* Colore header */
+    color: #fff;
+}
+
+header h1{
+    font-family: "Tilt Warp", sans-serif;
+     font-size: 36px; 
+}
+
+header .github{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #377182;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.icon-github, .icon-instagram{
+    font-size: 28px; 
+    color: #1e3050;
+}
+
+header .github span{
+    font-size: 25px;
+    color: #79c1d4;
+    font-weight: bold;
+}
+
+.monitoring-section {
+    padding: 10px 400px;
+}
+  
+.card {
+    display: flex;
+    align-items: center;
+    margin: 1.2rem 0;
+    padding: 3rem;
+    background-color: var(--article-background-color); 
+    border-radius: 10px;
+    color: #fff;
+    border-left: var(--status-online-border-left-color) 10px solid; /* Bordo sinistro verde per indicare lo stato online */
+}
+
+.card .icon-youtube,
+.card .icon-google, 
+.card .icon-twitter,
+.card .icon-instagram {
+    color: #fff;
+    font-size: 60px;  /* Aumenta la dimensione dell'icona YouTube */
+    margin: 20px;
+}
+.card .icon-google{
+    background: var(--google-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card .icon-youtube{
+    color: var(--youtube-color);
+}
+
+.card .icon-twitter{
+    color: var(--twitter-color)
+}
+
+
+.card .icon-instagram{
+    background: var(--instagram-gradient);
+    border-radius: 25%;
+    padding: 6px; 
+}
+
+.card h2{
+     font-size: 30px;  
+     margin: 2px 0 10px 0; 
+}
+
+.card p{
+    font-size: 20px;  
+    font-family: 'Alegreya', sans-serif; 
+    font-weight: bold;  
+    margin: 0;  
+    padding: 0;  
+    line-height: 1.5;  
+}
+  
+footer {
+    background-color: var(--footer-background-color); /* Dark background similar to Spotify */
+    color: #fff; /* White text */
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Font family for consistency */
+}
+
+.footer-col {
+    width: 25%;
+    margin-left: 20px;
+    padding: 35px;
     box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-col div{
+    display: flex; /* Use flexbox to align items horizontally*/
+    margin-bottom: 10px; /* Add some space between the items*/
+    gap: 50px;
+}
+
+.footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.footer-col ul {
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--body-background-color);
+.footer-col ul li {
+    margin-bottom: 10px;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--header-background-color);
-    padding: 10px 20px; 
-}
-
-h1, h3 {
-    color: white;
-}
-
-a {
-    color: var(--a-color);
+.footer-col ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    transition: color 0.3s ease;
 }
 
-article {
-    display: flex;
-    border-radius: 10px;
-    padding-left: 2rem;
-    height: auto;
-    border-left: 5px solid #4CAF50;
-    background-color: var(--article-background-color);
-    justify-content: space-between; 
-    margin-bottom: 30px;
-    transition: transform 0.3s, background-color 0.3s; 
+.footer-col ul li a:hover {
+    color: #1DB954; /* Highlight links with Spotify green */
 }
 
-article:hover {
-    transform: translateY(-5px); 
-    background-color: var(--hover-background-color, rgba(255, 255, 255, 0.1));
+.footer-col ul li a i {
+    margin-right: 8px;
+    font-size: 16px;
 }
 
-.links {
-    display: flex;
-    gap: 20px;
-}
 
-.links a {
-    font-size: 20px;
-    transition: color 0.3s; /* Aggiunta transizione per il colore */
-}
-
-.links a:hover {
-    color: #FFD700; /* Cambia colore al passaggio del mouse */
-}
-
-.container {
-    max-width: 850px;
-    margin: 0 auto; 
-    display: flex;
-    justify-content: space-between; /* Allineamento migliorato */
-    width: 100%; /* Assicura che utilizzi tutto lo spazio disponibile */
-    align-items: center;
-}
-
-.main-container{
-    max-width: 850px;
-    margin: 70px auto; 
-    border-color: var(--main-container-border-color);
-}
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    margin: auto 0;
-}
-
-.status-online {
-    border-left-color: var(--status-online-border-left-color); 
-}
-
-.status-offline {
-    border-left-color: var(--status-offline-border-left-color); 
-}
-
-.title-content {
-    display: flex;
-    align-items: center;
-    gap: 8px; 
-}
-
-.status-info {
-    margin-top: 0;
-}
-
-.img {
-    height: 2rem;
-}
-
-.mini-graph {
-    background-color: var(--mini-graph-background-color);
-    height: 150px; 
-    border: none;
-}
-
-.status-info p {
-    color: var(--p-color);
+.footer-bottom {
+    background-color: var(--footer-bottom-background-color);
     font-size: 18px;
-    margin: 3px 0; 
+    text-align: center;
+    font-family: 'ADLaM Display', sans-serif; 
+    padding: 1rem 0;
 }
+
+
+hr{
+    width: 400px;
+}
+
+.vl{
+    border-left: 6px solid #fff;
+    height: 200px;
+}
+
+
+  
+  

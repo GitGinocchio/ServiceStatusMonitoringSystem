@@ -1,12 +1,18 @@
 :root{
-    --body-background-color: #1A2A4B;
-    --header-background-color: #294163;
-    --article-background-color: #3B5B85;
+    --body-background-color: #3B5B85;
+    --header-background-color: #1A202C;
+    --article-background-color: #32888d;
     --main-container-border-color: #0a1b31;
-    --status-online-border-left-color: #6be46f; 
+    --status-online-border-left-color: #4CAF50; 
     --status-offline-border-left-color: #F44336; 
     --mini-graph-background-color: white;
+    --footer-background-color: #2c3e50;
+    --footer-bottom-background-color: #182a3c;
     --hover-background-color: rgba(255, 255, 255, 0.1);
     --a-color: #5577A2;
     --p-color: white;
+    --youtube-color: #FF0000; 
+    --google-gradient: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    --twitter-color: #1DA1F2; 
+    --instagram-gradient: linear-gradient(45deg, #F58529, #dd602a, #8134AF, #515BD4);
 }
