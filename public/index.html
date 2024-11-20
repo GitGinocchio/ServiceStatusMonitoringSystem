@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Monitoraggio in tempo reale dello stato dei principali servizi online come Google, YouTube, Twitter, e altri.">
     <title>ServiceTracker</title>
     <link rel="stylesheet" href="./static/css/styles.css">
     <link rel="stylesheet" href="./static/css/palette.css">
@@ -20,44 +21,68 @@
       </header>
     
       <section class="monitoring-section">
-        <div class="card">
-            <i class="fa-brands fa-google icon-google" alt="Google"></i>
-            <div class="desc">
-                <h2>Google</h2>
-                <p>Overall uptime: 99.9% <br> Average response time: 200ms</p>
+        <!-- Card Google -->
+        <a href="/google-status" class="card online">
+            <div class="desc_img">
+                <i class="fa-brands fa-google icon-google" alt="Google"></i>
+                <div class="desc">
+                    <h2>Google</h2>
+                    <p>Overall uptime: 99.9% <br> Average response time: 200ms</p>
+                </div>
             </div>
-        </div>
-      </section>
+            <img class="graph" src="/latency.png" alt="Latency Graph">
+        </a>
     
-      <section class="monitoring-section">
-        <div class="card">
-            <i class="fa-brands fa-youtube icon-youtube" alt="YouTube"></i>
-            <div class="desc">
-                <h2>Youtube</h2>
-                <p>Overall uptime: 99.9% <br> Average response time: 200ms</p>
+        <!-- Card YouTube -->
+        <a href="/youtube-status" class="card partial">
+            <div class="desc_img">
+                <i class="fa-brands fa-youtube icon-youtube" alt="YouTube"></i>
+                <div class="desc">
+                    <h2>YouTube</h2>
+                    <p>Overall uptime: 95.4% <br> Average response time: 450ms</p>
+                </div>
             </div>
-        </div>
-      </section>
-          
-      <section class="monitoring-section">
-        <div class="card">
-            <i class="fab fa-twitter icon-twitter" alt="Instagram"></i>
-            <div class="desc">
-                <h2>X (twitter)</h2>
-                <p>Overall uptime: 99.9% <br> Average response time: 200ms</p>
+            <img class="graph" src="/youtube-latency.png" alt="Latency Graph">
+        </a>
+    
+        <!-- Card Twitter -->
+        <a href="/twitter-status" class="card offline">
+            <div class="desc_img">
+                <i class="fa-brands fa-twitter icon-twitter" alt="Twitter"></i>
+                <div class="desc">
+                    <h2>Twitter</h2>
+                    <p>Overall uptime: 85.2% <br> Average response time: 600ms</p>
+                </div>
             </div>
-        </div>
-      </section>
-          
-      <section class="monitoring-section">
-        <div class="card">
-            <i class="fab fa-instagram icon-instagram" alt="Twitter"></i>
-            <div class="desc">
-                <h2>Instagram</h2>
-                <p>Overall uptime: 99.9% <br> Average response time: 200ms</p>
+            <img class="graph" src="/twitter-latency.png" alt="Latency Graph">
+        </a>
+    
+        <!-- Card Instagram -->
+        <a href="/instagram-status" class="card online">
+            <div class="desc_img">
+                <i class="fa-brands fa-instagram icon-instagram" alt="Instagram"></i>
+                <div class="desc">
+                    <h2>Instagram</h2>
+                    <p>Overall uptime: 98.7% <br> Average response time: 300ms</p>
+                </div>
             </div>
-        </div>
-      </section>
+            <img class="graph" src="/instagram-latency.png" alt="Latency Graph">
+        </a>
+    
+        <!-- Card Twitch -->
+        <a href="/twitch-status" class="card partial">
+            <div class="desc_img">
+                <i class="fa-brands fa-twitch icon-twitch" alt="Twitch"></i>
+                <div class="desc">
+                    <h2>Twitch</h2>
+                    <p>Overall uptime: 92.5% <br> Average response time: 400ms</p>
+                </div>
+            </div>
+            <img class="graph" src="/twitch-latency.png" alt="Latency Graph">
+        </a>
+    </section>
+    
+
     
       <footer>
         <div class="footer-col">
@@ -96,6 +121,6 @@
             <p>Copyright © 2024 Deniel – Web Design & HTML | Giulio – Development. All rights reserved.</p>
         </div>
     </footer>
-    
+    <script src="static/js/script.js"></script>
 </body>
 </html>
