@@ -52,21 +52,57 @@ header .github span{
   
 .card {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: 1.2rem 0;
     padding: 3rem;
-    background-color: var(--article-background-color); 
+    background-color: var(--article-background-color);
     border-radius: 10px;
     color: #fff;
-    border-left: var(--status-online-border-left-color) 10px solid; /* Bordo sinistro verde per indicare lo stato online */
+    border-left: 10px solid; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animazione su hover */
+    text-decoration: none; /* Rimuove sottolineature se l'elemento è un link */
+    animation: fadeIn 0.5s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Leggero ingrandimento */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Ombra dinamica */
+}
+
+.card.online {
+    border-left-color: #1DB954; /* Colore verde per server online */
+}
+
+.card.offline {
+    border-left-color: #E53935; /* Colore rosso per server offline */
+}
+
+.card.partial {
+    border-left-color: #FBC02D; /* Colore giallo per server parzialmente operativo */
+}
+
+.card .graph {
+    width: 145px;
+    height: 100px;
+    background-color: #fff;
+}
+
+
+.card .desc_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .card .icon-youtube,
 .card .icon-google, 
 .card .icon-twitter,
-.card .icon-instagram {
+.card .icon-instagram,
+.card .icon-twitch {
     color: #fff;
-    font-size: 60px;  /* Aumenta la dimensione dell'icona YouTube */
+    font-size: 60px;
     margin: 20px;
 }
 .card .icon-google{
@@ -90,18 +126,28 @@ header .github span{
     padding: 6px; 
 }
 
-.card h2{
-     font-size: 30px;  
-     margin: 2px 0 10px 0; 
+.card .icon-twitch{
+     color: var(--twitch-color);
 }
 
-.card p{
+.card h2{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card .desc p{
     font-size: 20px;  
-    font-family: 'Alegreya', sans-serif; 
-    font-weight: bold;  
+    font-family: 'Alegreya', sans-serif;   
     margin: 0;  
     padding: 0;  
     line-height: 1.5;  
+}
+
+.card .graph{
+    width: 145px;
+    height: 100px;
+    background-color: #fff;
 }
   
 footer {
@@ -152,7 +198,8 @@ footer {
 }
 
 .footer-col ul li a:hover {
-    color: #1DB954; /* Highlight links with Spotify green */
+    text-decoration: underline;
+    color: #1DB954;
 }
 
 .footer-col ul li a i {
@@ -177,6 +224,99 @@ hr{
 .vl{
     border-left: 6px solid #fff;
     height: 200px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query per dispositivi con larghezza massima di 768px (tablet) */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px; /* Riduci il padding */
+        flex-direction: column; /* Header in colonna */
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 28px; /* Riduci la dimensione del titolo */
+    }
+
+    .github {
+        margin-top: 10px; /* Aggiungi spaziatura sopra il link GitHub */
+    }
+
+    .monitoring-section {
+        padding: 10px 20px; /* Riduci i margini laterali */
+    }
+
+    .card {
+        flex-direction: column; /* Stack gli elementi in colonna */
+        align-items: flex-start;
+        padding: 1.5rem; /* Riduci il padding */
+    }
+
+    .card .desc_img {
+        flex-direction: column; /* Descrizione sopra l'icona */
+        align-items: flex-start;
+        gap: 1rem; /* Riduci lo spazio */
+    }
+
+    .card .graph {
+        width: 100%; /* Adatta la larghezza dell'immagine */
+        height: auto;
+        margin-top: 1rem; /* Aggiungi spazio sopra il grafico */
+    }
+}
+
+/* Media query per dispositivi con larghezza massima di 480px (smartphone) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px; /* Ancora più piccolo per smartphone */
+    }
+
+    .monitoring-section {
+        padding: 10px; /* Quasi nessun margine */
+    }
+
+    .card {
+        padding: 1rem; /* Riduci ulteriormente il padding */
+    }
+
+    .card h2 {
+        font-size: 1.2rem; /* Riduci il font del titolo */
+    }
+
+    .card .desc p {
+        font-size: 14px; /* Testo più piccolo */
+    }
+
+    footer {
+        padding: 10px; /* Riduci il padding nel footer */
+    }
+
+    .footer-col {
+        width: 100%; /* Footer in colonna */
+        margin: 0;
+        padding: 10px 0;
+        text-align: center; /* Centra il contenuto */
+    }
+
+    .footer-col div{
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        font-size: 14px; /* Testo più piccolo */
+    }
 }
 
 
