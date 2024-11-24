@@ -27,17 +27,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout Website Branch
+      - name: Checkout Main Branch
         uses: actions/checkout@v4
         with:
-          ref: website
-          path: ./
-    
-      - name: Checkout Data Branch
-        uses: actions/checkout@v4
-        with:
-          ref: data
-          path: ./public/data
+          ref: main
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
